@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Note } from 'src/models/Note';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_anuncios';
+  name: string = 'Luiggi';
+  isActivate =false;
+  note: Note = { title: "Titulo", description:"", date: "" }
+
+  constructor(){
+  }
 }

@@ -11,7 +11,13 @@ export class AppComponent {
   name: string = 'Luiggi';
   isActivate = false;
   note: Note = {title:"titulo", description:"",date:""}
+  edad = 18;
 
+  saludo = "Hola desde TS"
+
+  holaFuncion(): string {
+    return "Hola desde funcion"
+  } 
   constructor(){
   }
 }

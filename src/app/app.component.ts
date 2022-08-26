@@ -9,8 +9,8 @@ import { Note } from 'src/models/Note';
 export class AppComponent {
   title = 'angular_anuncios';
   name: string = 'Luiggi';
-  isActivate =false;
-  note: Note = { title: "Titulo", description:"", date: "" }
+  isActivate = false;
+  note: Note = {title:"titulo", description:"",date:""}
 
   constructor(){
   }

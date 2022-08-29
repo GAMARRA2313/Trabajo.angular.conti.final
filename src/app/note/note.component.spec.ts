@@ -11,7 +11,9 @@ describe('NoteComponent', () => {
       declarations: [ NoteComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(NoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

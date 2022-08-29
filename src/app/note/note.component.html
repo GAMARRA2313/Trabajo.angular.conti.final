@@ -1,1 +1,10 @@
-<p>note works!</p>
+<div class="card-small">
+    <img src="assets/img/delete.png" (click)="remove()" alt="Eliminar nota" title="Eliminar nota" width="30px">
+    <a [routerLink]="['noteDetail', idNote]">
+        <p>{{section}}</p>
+        <div>{{title}}</div>
+        <div class="card-small___metadata">
+            <span class="card-small___metadata--hour">{{hour}}</span> {{city}}
+        </div>
+    </a>
+</div>

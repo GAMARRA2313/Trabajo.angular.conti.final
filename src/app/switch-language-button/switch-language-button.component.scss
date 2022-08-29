@@ -1,0 +1,15 @@
+.btn__switch {
+    background-color: #0b74bb;
+    border: 1px solid #0b74bb;
+    border-width: 0px;
+    border-radius: 4px;
+    padding: 16px 16px;
+    color: #fff;
+    cursor: pointer;
+    
+    &.activate {
+        background-color: #fff;
+        border: 1px solid #0b74bb;
+        color: #0b74bb;
+    }
+}

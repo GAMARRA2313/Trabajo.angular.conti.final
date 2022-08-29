@@ -1,0 +1,53 @@
+<main class="content" [class.max-height]="titleNote.length">
+  <div class="content__search">
+    <h2>Aqui podrás buscar titulos de algun anucio</h2>
+    <input type="text" [(ngModel)] = "titleNote" (ngModelChange)="findNote($event)">
+  </div>
+
+  <div *ngIf="!titleNote.length; else showSearchResults">
+    <h2>Notas principales</h2>
+    <p>Las notas principales para hoy son:</p>
+  
+    <div class="card-container">
+      <app-note-card *ngFor="let noteItem of nationalNotes" [idNote]="noteItem.id" [title]="noteItem.title"
+        [section]="noteItem.section" [city]="noteItem.city" [date]="noteItem.date" [picture]="noteItem.picture"></app-note-card>
+    </div>
+  
+    <div class="container__news">
+      <div>
+        <h2>Lo ultimo, lo más leido</h2>
+        <p>Enterate de las notas más recientes en tu credi pyme de confianza:</p>
+      </div>
+      <div>
+          <app-switch-language-button text="NACIONAL" [test]="showCardFormat" (click)="changeNoteType('NACIONAL')"></app-switch-language-button>
+          &nbsp;
+          <app-switch-language-button text="INTERNACIONAL" [test]="showCardFormat" (click)="changeNoteType('INTERNACIONAL')"></app-switch-language-button>
+      </div>
+    </div>
+  
+    <!-- SHOW NATIONAL NOTES -->
+    <div class="card-container" *ngIf="showCardFormat === 'NACIONAL'; else international">
+      <app-note *ngFor="let nationalNoteItem of breakingNews" (removeItem)="removeNoteList($event)"
+        [idNote]="nationalNoteItem.id" [title]="nationalNoteItem.title" [hour]="nationalNoteItem.hour"
+        [city]="nationalNoteItem.city" [section]="nationalNoteItem.section">
+      </app-note>
+    </div>
+  
+    <!-- SHOW INTERNATIONAL NOTES -->
+    <ng-template #international>
+      <div class="card-container">
+        <app-note-card *ngFor="let internationalNote of internationalNotes" [idNote]="internationalNote.id"
+          [title]="internationalNote.title" [section]="internationalNote.section" [city]="internationalNote.city"
+          [date]="internationalNote.date" [picture]="internationalNote.picture"></app-note-card>
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template #showSearchResults>
+    <div class="card-container">
+      <app-note-card *ngFor="let noteItem of matchNotes" [idNote]="noteItem.id" [title]="noteItem.title"
+        [section]="noteItem.section" [city]="noteItem.city" [date]="noteItem.date" [picture]="noteItem.picture"></app-note-card>
+    </div>
+    <p *ngIf="!matchNotes.length">¡No hay coincidencias en tu búsqueda!</p>
+  </ng-template>
+</main>

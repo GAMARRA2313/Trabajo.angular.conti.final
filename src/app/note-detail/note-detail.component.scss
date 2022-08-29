@@ -1,0 +1,35 @@
+.noteDetail {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    max-width: 1100px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    &__section {
+        color:#0c5991;
+        font-size: 13px
+    }
+
+    &__information {
+        color: #000;
+        font-size: 13px;
+    }
+
+    &__container {
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+
+            &:hover {
+                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+        }
+    }
+
+    &__description {
+        text-align: justify;
+    }
+}

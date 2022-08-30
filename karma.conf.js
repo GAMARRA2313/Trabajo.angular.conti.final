@@ -21,7 +21,7 @@ module.exports = function (config) {
       suppressAll: true 
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-noticias'),
+      dir: require('path').join(__dirname, './coverage/angular-anuncios'),
       subdir: '.',
       reporters: [
         { type: 'html' },

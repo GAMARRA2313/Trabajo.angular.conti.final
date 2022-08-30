@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-noticias": {
+    "angular-anuncios": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -131,4 +131,5 @@
   "cli": {
     "analytics": "1fece1c8-8dfa-458e-9951-b2b2c53a1b6c"
   }
+ 
 }
